@@ -60,7 +60,7 @@ out_label = tk.Label(text='Is equal to: 0 Km', font=FONT)
 out_label.grid(row=4, column=0, columnspan=2, pady=(0, 15))
 
 convert_button = tk.Button(text='Convert', command=convert)
-convert_button.grid(row=5, column=0, sticky='E', padx=(0, 10))
+convert_button.grid(row=5, column=0, sticky='E', padx=(10, 10))
 
 mode_label = tk.Label(text="Mode:")
 mode_label.grid(row=5, column=1, sticky='W', padx=(0, 10))
