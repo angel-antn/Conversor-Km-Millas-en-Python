@@ -14,16 +14,10 @@ def convert():
     try:
         if radio_state.get() == 0:
             out = float(in_entry.get()) * MILE_IN_KM
-            if out != 0:
-                out_label.config(text=f'Is equal to: {out.__format__(".2f")} Km')
-            else:
-                out_label.config(text='Is equal to: 0 Km')
+            out_label.config(text=f'Is equal to: {round(out, 2)} Km')
         else:
             out = float(in_entry.get()) / MILE_IN_KM
-            if out != 0:
-                out_label.config(text=f'Is equal to: {out.__format__(".2f")} Miles')
-            else:
-                out_label.config(text='Is equal to: 0 Miles')
+            out_label.config(text=f'Is equal to: {round(out, 2)} Miles')
 
     except ValueError:
         out_label.config(text=f'Is equal to: 0 {MODE[radio_state.get()]}')
@@ -52,7 +46,7 @@ window.config(pady=20, padx=20)
 title_label = tk.Label(text='Miles to Km Converter!', font=TITLE_FONT)
 title_label.grid(row=0, column=0, columnspan=2)
 
-intro_label = tk.Label(text='Enter the number of miles you want to convert:', font=FONT)
+intro_label = tk.Label(text='Enter the number of units you want to convert:', font=FONT)
 intro_label.grid(row=1, column=0, columnspan=2, pady=(0, 20))
 
 in_entry = tk.Entry(width=10, justify=tk.CENTER)
